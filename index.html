@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="fr">
+<!DOCTYPE html>
+<html lang="fr">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -6,67 +7,79 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --color-background: #ffffff;
-      --color-text: #222222;
-      --color-accent: #2c3e50;
-      --color-link: #336699;
+      --color-background: #e8f0fe; /* bleu clair */
+      --color-text: #1a2e4f; /* bleu foncé */
+      --color-accent: #1a2e4f;
+      --color-link: #1a2e4f;
+      --color-button: #1a2e4f;
+      --color-button-bg: #cce0ff;
       --font-main: 'Inter', sans-serif;
-    }body {
-  margin: 0;
-  font-family: var(--font-main);
-  background-color: var(--color-background);
-  color: var(--color-text);
-  line-height: 1.6;
-}
+    }
 
-header {
-  background-color: var(--color-background);
-  padding: 2rem 1rem;
-  text-align: center;
-}
+    body {
+      margin: 0;
+      font-family: var(--font-main);
+      background-color: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
 
-header h1 {
-  margin: 0;
-  font-size: 2.5rem;
-  color: var(--color-accent);
-}
+    header {
+      background-color: var(--color-background);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
 
-header p {
-  margin: 0.5rem 0;
-  font-size: 1.1rem;
-}
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: var(--color-accent);
+    }
 
-nav a {
-  margin: 0 1rem;
-  text-decoration: none;
-  color: var(--color-link);
-  font-weight: bold;
-}
+    header p {
+      margin: 0.5rem 0;
+      font-size: 1.1rem;
+    }
 
-section {
-  padding: 2rem 1rem;
-  max-width: 800px;
-  margin: auto;
-}
+    nav a {
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+      background-color: var(--color-button-bg);
+      color: var(--color-button);
+      padding: 0.6rem 1.2rem;
+      border-radius: 6px;
+      font-size: 1rem;
+      transition: background-color 0.2s;
+    }
 
-section h2 {
-  border-bottom: 2px solid var(--color-accent);
-  padding-bottom: 0.5rem;
-}
+    nav a:hover {
+      background-color: #aac7ff;
+    }
 
-ul {
-  list-style: none;
-  padding: 0;
-}
+    section {
+      padding: 2rem 1rem;
+      max-width: 800px;
+      margin: auto;
+    }
 
-li {
-  padding: 0.5rem 0;
-}
+    section h2 {
+      border-bottom: 2px solid var(--color-accent);
+      padding-bottom: 0.5rem;
+    }
 
-a {
-  color: var(--color-link);
-}
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
+    li {
+      padding: 0.5rem 0;
+    }
+
+    a {
+      color: var(--color-link);
+    }
   </style>
 </head>
 <body>
@@ -78,17 +91,23 @@ a {
       <a href="#portfolio">Portfolio</a>
       <a href="#contact">Contact</a>
     </nav>
-  </header>  <section id="presentation">
+  </header>
+
+  <section id="presentation">
     <h2>Présentation</h2>
     <p>Forte de mon expérience dans le secteur social, j'ai choisi de mettre mes compétences transversales au service du domaine de la technologie. Je recherche une opportunité stimulante où je pourrai utiliser mes compétences analytiques, mais également continuer à évoluer professionnellement.</p>
-  </section>  <section id="portfolio">
+  </section>
+
+  <section id="portfolio">
     <h2>Portfolio</h2>
     <ul>
       <li><a href="https://github.com/ZenabaNouriatte/TwitterSentimentAnalysis" target="_blank">Analyse de sentiment des tweets sur les JO 2024</a></li>
       <li><a href="https://github.com/ZenabaNouriatte/BonheurNationalBrut" target="_blank">Modélisation du Bonheur National Brut</a></li>
       <li>Projet Inception (en cours)</li>
     </ul>
-  </section>  <section id="contact">
+  </section>
+
+  <section id="contact">
     <h2>Contact</h2>
     <p>Email : <a href="mailto:zenaba.mogne@live.fr">zenaba.mogne@live.fr</a></p>
     <p>
