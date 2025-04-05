@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="fr">
 <head>
   <meta charset="UTF-8">
@@ -25,23 +26,39 @@
 
     header {
       background-color: var(--color-background);
-      padding: 2rem 1rem;
       text-align: center;
+      padding: 2rem 1rem 1rem;
     }
 
     header h1 {
+      font-size: 3rem;
       margin: 0;
-      font-size: 2.5rem;
       color: var(--color-accent);
     }
 
-    header p {
-      margin: 0.5rem 0;
-      font-size: 1.1rem;
+    header .subtitle {
+      font-size: 1.3rem;
+      margin-top: 0.5rem;
+    }
+
+    .separator {
+      margin: 1rem auto;
+      width: 200px;
+      font-family: monospace;
+      font-size: 1rem;
+      color: var(--color-accent);
+    }
+
+    nav {
+      margin-top: 1.5rem;
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      padding-bottom: 1rem;
+      border-bottom: 1px solid #bfd6ff;
     }
 
     nav a {
-      margin: 0 1rem;
       text-decoration: none;
       font-weight: bold;
       background-color: var(--color-button-bg);
@@ -57,30 +74,33 @@
     }
 
     section {
-      padding: 2rem 1rem;
+      padding: 2rem 1.5rem;
       max-width: 800px;
       margin: auto;
     }
 
-    section h2 {
-      border-bottom: 2px solid var(--color-accent);
-      padding-bottom: 0.5rem;
+    h2 {
+      font-size: 1.8rem;
+      color: var(--color-accent);
       text-align: center;
+      margin-bottom: 1rem;
     }
 
     h3 {
-      text-align: center;
+      font-size: 1.4rem;
       color: var(--color-accent);
       margin-top: 2rem;
+      border-bottom: 1px solid #bfd6ff;
+      padding-bottom: 0.4rem;
     }
 
     ul {
       list-style: none;
-      padding: 0;
+      padding-left: 0;
     }
 
     li {
-      padding: 0.5rem 0;
+      padding: 0.4rem 0;
     }
 
     a {
@@ -88,18 +108,27 @@
     }
 
     .highlight {
-      font-size: 1.8rem;
+      font-size: 1.6rem;
       font-weight: bold;
       text-align: center;
       display: block;
       margin-bottom: 2rem;
+      color: var(--color-accent);
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #bfd6ff;
+      margin: 2rem 0;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>MOGNE Zenaba</h1>
-    <p> Expert en architecture informatique| RNCP 7 en préparation</p>
+    <p class="subtitle">Étudiante à 42 | En reconversion vers les métiers du cloud, réseaux et cybersécurité</p>
+    <div class="separator">// ———————</div>
     <nav>
       <a href="#presentation">Présentation</a>
       <a href="#portfolio">Portfolio</a>
@@ -108,36 +137,33 @@
   </header>
 
   <section id="presentation">
-    <div class="highlight"> Présentation</div>
+    <h2>Présentation</h2>
 
-    <h3> Qui je suis</h3>
-    <p>Je m’appelle <strong>Zenaba</strong>, j’ai 33 ans, et je suis actuellement étudiante à <strong>l'école 42</strong>, en reconversion vers les métiers de l’informatique.<br>
-    Après une première carrière de dix ans dans le secteur social, j’ai choisi de donner un nouvel élan à ma trajectoire professionnelle.<br>
-    Curieuse, rigoureuse et profondément motivée, je me suis tournée vers un domaine dynamique, en perpétuelle évolution, qui stimule ma soif d’apprendre : le numérique.</p>
+    <h3>Qui je suis</h3>
+    <p>Je m’appelle <strong>Zenaba</strong>, j’ai 33 ans, et je suis actuellement étudiante à <strong>l'école 42</strong>, en reconversion vers les métiers de l’informatique.</p>
+    <p>Après une première carrière de dix ans dans le secteur social, j’ai choisi de donner un nouvel élan à ma trajectoire professionnelle. Curieuse, rigoureuse et profondément motivée, je me suis tournée vers un domaine dynamique, en perpétuelle évolution, qui stimule ma soif d’apprendre : le numérique.</p>
 
-    <h3> Ce que j’ai fait</h3>
-    <p>J’ai exercé comme <strong>chargée d’accompagnement social senior</strong>, principalement auprès de propriétaires en copropriétés dégradées, mais aussi sur des problématiques plus larges comme le logement, la retraite ou encore l’accompagnement d’adultes en reprise détudes.</p>
-    <p>En 2023, ressentant le besoin de relever de nouveaux défis, j’ai entamé une reconversion vers la tech.<br>
-    J’ai d’abord exploré la <strong>data</strong> (via un bootcamp et des projets d’analyse), avant de m’orienter vers un apprentissage plus poussé et technique.</p>
-    <p>C’est ce qui m’a conduite à intégrer <strong>l'école 42</strong>, dont la pédagogie par projets, l’apprentissage par la pratique et l’entraide m’ont permis de développer des compétences concrètes, tout en m’immergeant dans un environnement technique exigeant.<br>
-    J’y ai découvert un fort attrait pour les sujets liés à <strong>l’administration système et réseau</strong>.</p>
+    <h3>Ce que j’ai fait</h3>
+    <p>J’ai exercé comme <strong>chargée d’accompagnement social senior</strong>, principalement auprès de propriétaires en copropriétés dégradées, mais aussi sur des problématiques plus larges comme le logement, la retraite ou encore l’accompagnement d’adultes en reprise d'études.</p>
+    <p>En 2023, j’ai entamé une reconversion vers la tech. J’ai d’abord exploré la <strong>data</strong> (via un bootcamp et des projets d’analyse), avant de m’orienter vers un apprentissage plus poussé et technique. J’ai intégré <strong>l’école 42</strong>, attirée par sa pédagogie par projets, son autonomie et son exigence. J’y ai découvert un attrait particulier pour l’administration système et réseau.</p>
 
-    <h3>🟦 Où je vais</h3>
-    <p>Aujourd’hui, je souhaite me spécialiser dans le <strong>cloud computing</strong>, avec une forte sensibilité pour les <strong>enjeux de sécurité</strong>.<br>
-    Je prévois de suivre la certification <strong>RNCP 7 “Administrateur systèmes, réseaux et sécurité”</strong>, pour consolider mes bases et m’ouvrir aux métiers de la cybersécurité, du cloud, et de l'infrastructure système.</p>
+    <h3>Où je vais</h3>
+    <p>Je souhaite me spécialiser dans le <strong>cloud computing</strong>, avec une forte sensibilité pour les <strong>enjeux de sécurité</strong>. Je prévois de suivre la certification <strong>RNCP 7 “Administrateur systèmes, réseaux et sécurité”</strong>, pour consolider mes bases et m’ouvrir aux métiers de la cybersécurité, du cloud, et de l'infrastructure système.</p>
     <p>Je cherche à acquérir des compétences solides dans les domaines suivants :</p>
     <ul>
-      <li>- Déploiement d'infrastructures cloud (IaaS / PaaS)</li>
-      <li>- Conteneurisation (Docker) et orchestration (Kubernetes)</li>
-      <li>- Sécurité réseau et gestion des accès</li>
-      <li>- Administration système avancée (Linux, supervision, automatisation)</li>
-      <li>- Sauvegarde, haute disponibilité, bonnes pratiques DevOps</li>
+      <li>– Déploiement d'infrastructures cloud (IaaS / PaaS)</li>
+      <li>– Conteneurisation (Docker) et orchestration (Kubernetes)</li>
+      <li>– Sécurité réseau et gestion des accès</li>
+      <li>– Administration système avancée (Linux, supervision, automatisation)</li>
+      <li>– Sauvegarde, haute disponibilité, bonnes pratiques DevOps</li>
     </ul>
 
-    <h3> Ce que je recherche</h3>
+    <h3>Ce que je recherche</h3>
     <p>Je suis actuellement à la recherche <strong>d’une alternance ou d’un stage à partir d’octobre 2025</strong>, dans les domaines du <strong>cloud</strong>, de la <strong>cybersécurité</strong> ou de <strong>l’administration système</strong>.</p>
     <p>En parallèle de mon cursus à 42, je me forme activement aux outils et technologies liés à ces environnements : <strong>Linux</strong>, <strong>Docker</strong>, <strong>cloud public</strong>, <strong>sécurité des infrastructures</strong>, et je documente mes projets sur GitHub.</p>
   </section>
+
+  <hr>
 
   <section id="portfolio">
     <h2>Portfolio</h2>
@@ -148,6 +174,8 @@
     </ul>
   </section>
 
+  <hr>
+
   <section id="contact">
     <h2>Contact</h2>
     <p>Email : <a href="mailto:zenaba.mogne@live.fr">zenaba.mogne@live.fr</a></p>
@@ -156,5 +184,7 @@
       <a href="https://github.com/ZenabaNouriatte" target="_blank">GitHub</a>
     </p>
   </section>
+
 </body>
-</html>"
+</html>
+
