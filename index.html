@@ -114,13 +114,90 @@
       border-top: 1px solid #bfd6ff;
       margin: 2rem 0;
     }
+
+    .objectives-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1rem;
+    }
+
+    .objective-card {
+      border: 1px solid #bfd6ff;
+      padding: 1.2rem;
+      border-radius: 8px;
+      background-color: #f5faff;
+    }
+
+    .objective-card h4 {
+      color: var(--color-accent);
+      margin-top: 0;
+      font-size: 1.1rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin-top: 1.5rem;
+    }
+
+    .skills-category {
+      background-color: #f5faff;
+      border: 1px solid #bfd6ff;
+      border-radius: 8px;
+      padding: 1.2rem;
+    }
+
+    .skills-category h4 {
+      color: var(--color-accent);
+      margin-top: 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #cce0ff;
+      padding-bottom: 0.5rem;
+    }
+
+    .skills-list {
+      list-style: disc;
+      padding-left: 1.2rem;
+      margin-top: 0.8rem;
+    }
+
+    .skills-list li {
+      padding: 0.2rem 0;
+      font-size: 0.95rem;
+    }
+
+    .project-status {
+      display: inline-block;
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      font-size: 0.8rem;
+      font-weight: bold;
+      margin-left: 0.5rem;
+    }
+
+    .status-completed {
+      background-color: #d4edda;
+      color: #155724;
+    }
+
+    .status-in-progress {
+      background-color: #fff3cd;
+      color: #856404;
+    }
+
+    .status-planned {
+      background-color: #e2e3e5;
+      color: #383d41;
+    }
   </style>
-<meta content="Portfolio de Zenaba MOGNE – Projets en data, cloud et administration système. Étudiante à l’école 42, disponible dès novembre 2025." name="description"/></head>
+<meta content="Portfolio de Zenaba MOGNE – Projets en data, cloud et administration système. Étudiante à l'école 42, disponible dès novembre 2025." name="description"/></head>
 <body>
 <header>
 <h1>MOGNE Zenaba</h1>
 <p style="font-size: 1.8rem; font-weight: bold; font-family: 'Courier New', monospace;">Étudiante à l'école 42</p>
-<p style="font-size: 1.1rem; font-family: 'Courier New', monospace;">&lt;/ À la recherche d’opportunités professionnelles dans les domaines du cloud, des systèmes, des réseaux et de la cybersécurité. &gt;</p>
+<p style="font-size: 1.1rem; font-family: 'Courier New', monospace;">&lt;/ À la recherche d'opportunités professionnelles dans les domaines du cloud, des systèmes, des réseaux et de la cybersécurité. &gt;</p>
 <div style="display: inline-block; background-color: #ffe4a3; color: #1a2e4f; font-weight: bold; padding: 0.4rem 1rem; border-radius: 6px; margin-top: 1rem; margin-bottom: 2rem;">📣 Disponible dès novembre 2025 (stage/CDD/CDI)</div>
 <nav>
 <a href="#presentation">Présentation</a>
@@ -138,42 +215,107 @@
 </header>
 <section id="presentation" style="background-color: white; border-radius: 10px; box-shadow: 0 0 10px rgba(0,0,0,0.05);">
 <h2 style="text-align:center; font-size: 2rem;">────────── Présentation ──────────</h2>
-<h3>Qui je suis</h3><div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
-<p>Je m’appelle <strong>Zenaba</strong>, j’ai 33 ans, et je suis actuellement étudiante à <strong>l'école 42</strong>, en reconversion vers les métiers de l’informatique.</p>
-<p>Après une première carrière de dix ans dans le secteur social, j’ai choisi de donner un nouvel élan à ma trajectoire professionnelle. Je me suis tournée vers le numérique, un domaine dynamique, en perpétuelle évolution.</p>
-</div><h3>Ce que j’ai fait</h3><div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
-<p>J’ai exercé comme <strong>chargée d’accompagnement social senior</strong>, principalement auprès de propriétaires en copropriétés dégradées, mais aussi sur des problématiques plus larges comme le logement, la retraite ou encore l’accompagnement d’adultes en reprise d'études.</p>
-<p>En 2023, j’ai entamé une reconversion vers la tech. J’ai d’abord exploré la <strong>data</strong> (via un bootcamp et des projets d’analyse), avant de m’orienter vers un apprentissage plus poussé et technique. J’ai intégré <strong>l’école 42</strong>, attirée par sa pédagogie par projets, son autonomie et son exigence. J’y ai découvert un attrait particulier pour l’administration système et réseau.</p>
-</div><h3>Où je vais</h3><div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
-<p>Je souhaite me spécialiser dans le <strong>cloud computing</strong>, avec une forte sensibilité pour les <strong>enjeux de sécurité</strong>. Je prévois de suivre la certification <strong>RNCP 7 “Administrateur systèmes, réseaux et sécurité”</strong>, pour consolider mes bases et m’ouvrir aux métiers de la cybersécurité, du cloud, et de l'infrastructure système.</p>
-<p>Je cherche à acquérir des compétences solides dans les domaines suivants :</p>
+<h3>Qui je suis</h3>
+<div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
+<p>Je m'appelle <strong>Zenaba</strong>, j'ai 33 ans et je suis actuellement étudiante à <strong>l'école 42</strong>. Je mène actuellement une reconversion vers les métiers de l'infrastructure, du cloud et du DevOps.</p>
+<p>Après une première carrière de dix ans dans le secteur social, j'ai choisi de donner un nouvel élan à ma trajectoire professionnelle. Je me suis tournée vers le numérique, un domaine en constante évolution, à fort impact, où l'apprentissage continu est essentiel.</p>
+</div>
+
+<h3>Où je vais</h3>
+<div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
+<h4>Ma vision professionnelle</h4>
+<p>Je me forme pour travailler dans les métiers du <strong>Cloud et du DevOps</strong>, avec l'envie de contribuer à des projets concrets et utiles.</p>
+<p>Mon objectif est de construire des infrastructures modernes, sécurisées et fiables, au service d'équipes tech dynamiques et de produits à impact. Je souhaite contribuer à la transformation digitale des entreprises en concevant et opérant des architectures cloud robustes, scalables et sécurisées.</p>
+<p>Ce qui me passionne dans le Cloud, c'est l'alliance entre complexité technique, impact business, et résilience des systèmes. J'aime comprendre les briques, les faire dialoguer et créer un tout fiable.</p>
+
+<h4>Domaines d'expertise cibles</h4>
 <ul>
-<li>☁️ Déploiement d'infrastructures cloud (IaaS / PaaS)</li>
-<li>🐳 Conteneurisation (Docker) et orchestration (Kubernetes)</li>
-<li>🔐 Sécurité réseau et gestion des accès</li>
-<li>🖥️ Administration système avancée (Linux, supervision, automatisation)</li>
-<li>🧩 Sauvegarde, haute disponibilité, bonnes pratiques DevOps</li>
+<li>☁️ <strong>Cloud Computing</strong> : Conception et déploiement d'architectures multi-cloud</li>
+<li>🔐 <strong>DevSecOps</strong> : Intégration de la sécurité dans les pipelines CI/CD</li>
+<li>🛠️ <strong>Infrastructure as Code</strong> : Automatisation complète des déploiements</li>
+<li>📊 <strong>Monitoring & Observabilité</strong> : Garantir la fiabilité des services en production</li>
 </ul>
-</div><h3>Ce que je recherche</h3><div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
-<p>Je suis actuellement à la recherche <strong>d’un stage à partir de novembre 2025</strong>, dans les domaines du <strong>cloud</strong>, de la <strong>cybersécurité</strong> ou de <strong>l’administration système</strong>.</p>
-<p>En parallèle de mon cursus à 42, je me forme activement aux outils et technologies liés à ces environnements : <strong>Linux</strong>, <strong>Docker</strong>, <strong>cloud public</strong>, <strong>sécurité des infrastructures</strong>, et je documente mes projets sur GitHub.</p></div>
+
+<h4>Mon approche</h4>
+<p>Apprendre par la pratique, progresser par les projets, et transmettre dès que possible. Je suis aussi très intéressée par la transmission : documenter mes apprentissages, accompagner des débutants, ou contribuer à des communautés me semble essentiel pour progresser.</p>
+</div>
+
+<h3>Ce que je recherche</h3>
+<div style="border: 1px solid #bfd6ff; padding: 1rem; border-radius: 8px; background-color: #f5faff; margin-top: 1rem;">
+<p>Je suis actuellement à la recherche <strong>d'un stage à partir de novembre 2025</strong>, dans les domaines du Cloud, de l'automatisation des infrastructures, du DevOps ou de l'observabilité.</p>
+
+<h4>Environnement professionnel idéal</h4>
+<p>Je recherche un cadre où je pourrai :</p>
+<ul>
+<li>• Travailler sur des infrastructures à fort impact business</li>
+<li>• Collaborer avec des équipes pluridisciplinaires (Dev, Ops, Sec)</li>
+<li>• Contribuer à des projets innovants</li>
+<li>• Évoluer dans une culture de partage et d'amélioration continue</li>
+</ul>
+
+<h4>Types de missions recherchées</h4>
+<ul>
+<li>• <strong>Migration vers le Cloud</strong> : modernisation d'infrastructures legacy</li>
+<li>• <strong>Automatisation DevOps</strong> : déploiements industrialisés, réduction du time-to-market</li>
+<li>• <strong>Sécurité Cloud</strong> : mise en place d'architectures Zero Trust, DevSecOps, monitoring avancé</li>
+<li>• <strong>Observabilité</strong> : centralisation des logs, supervision, traçabilité</li>
+<li>• <strong>Optimisation des coûts (FinOps)</strong> : gestion et optimisation des ressources cloud</li>
+</ul>
+
+<h4>Secteurs d'activité privilégiés</h4>
+<ul>
+<li>• <strong>Tech & Startups</strong> : infrastructures élastiques, bonnes pratiques à mettre en place dès le début</li>
+<li>• <strong>Industrie & IoT</strong> : enjeux concrets (production, logistique, sécurité) avec systèmes connectés</li>
+<li>• <strong>Éducation / Santé / Associatif</strong> : impact humain fort et besoins croissants en transformation numérique</li>
+</ul>
+</div>
 </section>
 <hr/>
 <section id="parcours">
 <h2 style="text-align:center; font-size: 2rem;">────────── Mon parcours ──────────</h2>
-<div style="border: 1px solid #bfd6ff; padding: 1.5rem; border-radius: 10px; background-color: #f5faff;">
+
+<h3>Mon parcours de spécialisation</h3>
+<div class="objectives-grid">
+<div class="objective-card">
+<h4>🎯 Objectifs à court terme (fin 2025)</h4>
+<ul>
+<li>• Terminer le tronc commun de 42</li>
+<li>• Acquérir des bases solides en AWS, Terraform, CI/CD, Kubernetes</li>
+<li>• Obtenir une première certification cloud</li>
+<li>• Évoluer dans une entreprise en stage, de préférence utilisant AWS</li>
+</ul>
+</div>
+<div class="objective-card">
+<h4>🚀 Objectifs à moyen terme (2026)</h4>
+<ul>
+<li>• Développer une expertise poussée sur AWS</li>
+<li>• Approfondir l'automatisation (IaC) et la sécurité (DevSecOps)</li>
+<li>• Intervenir sur des architectures plus complexes</li>
+</ul>
+</div>
+<div class="objective-card">
+<h4>🎖️ Objectifs à long terme (2026–2027)</h4>
+<ul>
+<li>• Évoluer vers un rôle de Cloud Engineer, DevOps ou SRE</li>
+<li>• Continuer à monter en compétences techniques et collaboratives</li>
+<li>• Contribuer à des projets d'envergure</li>
+</ul>
+</div>
+</div>
+
+<div style="border: 1px solid #bfd6ff; padding: 1.5rem; border-radius: 10px; background-color: #f5faff; margin-top: 2rem;">
 <h3>Diplômes</h3>
 <ul>
 <li>
 <h4 style="margin-bottom: 0;">Formation à l'école 42 Paris</h4>
-<div style="font-style: italic; margin-top: 0; margin-bottom: 0.5rem;">Novembre 2023 à aujourd’hui</div>
+<div style="font-style: italic; margin-top: 0; margin-bottom: 0.5rem;">Novembre 2023 à aujourd'hui</div>
 <div>Formation intensive en informatique</div>
-<p>L’École 42 est une école d’informatique gratuite, sans professeur ni cours, fondée sur l’apprentissage par projets et l’entraide entre pairs.
-      J’y développe des compétences solides en programmation (C, C++), en algorithmie, ainsi qu’en administration système et réseau (Linux, Docker, cybersécurité).
+<p>L'École 42 est une école d'informatique gratuite, sans professeur ni cours, fondée sur l'apprentissage par projets et l'entraide entre pairs.
+      J'y développe des compétences solides en programmation (C, C++), en algorithmie, ainsi qu'en administration système et réseau (Linux, Docker, cybersécurité).
       Cette formation exigeante me permet de progresser rapidement sur des projets concrets, en autonomie, avec un haut niveau de rigueur et de résilience.</p>
 </li>
 <li>
-<h4 style="margin-bottom: 0;">Diplôme d’État de Conseiller en Économie Sociale Familiale</h4>
+<h4 style="margin-bottom: 0;">Diplôme d'État de Conseiller en Économie Sociale Familiale</h4>
 <div style="font-style: italic; margin-top: 0;">2013</div>
 </li>
 <li>
@@ -186,75 +328,153 @@
 <li>
 <h4 style="margin-bottom: 0;">Chargée de mission sociale – Léonie Chatelain</h4>
 <div style="font-style: italic; margin-top: 0;">2013 - 2023</div>
-<p>Durant dix ans, j’ai piloté et mené des actions sociales d’envergure pour le compte de collectivités territoriales et bailleurs publics (CDC-Habitat, Plaine Commune, Est Ensemble…). J’intervenais sur des problématiques complexes liées aux copropriétés en difficulté, à la précarité énergétique ou à la retraite, en accompagnant des publics souvent fragilisés.</p>
+<p>Durant dix ans, j'ai piloté et mené des actions sociales d'envergure pour le compte de collectivités territoriales et bailleurs publics (CDC-Habitat, Plaine Commune, Est Ensemble…). J'intervenais sur des problématiques complexes liées aux copropriétés en difficulté, à la précarité énergétique ou à la retraite, en accompagnant des publics souvent fragilisés.</p>
 <p><strong>Mes missions incluaient :</strong></p>
 <ul style="list-style: disc; padding-left: 1.5rem;">
-<li>Définition et mise en œuvre de stratégies d’accompagnement individualisées, adaptées à chaque dispositif</li>
-<li>Analyse socio-économique : élaboration de projections financières (outils Excel) permettant d’évaluer les capacités de relogement ou de maintien dans le logement</li>
-<li>Construction et animation d’un réseau de partenaires (CAF, CCAS, bailleurs, services techniques, centres de formation...)</li>
+<li>Définition et mise en œuvre de stratégies d'accompagnement individualisées, adaptées à chaque dispositif</li>
+<li>Analyse socio-économique : élaboration de projections financières (outils Excel) permettant d'évaluer les capacités de relogement ou de maintien dans le logement</li>
+<li>Construction et animation d'un réseau de partenaires (CAF, CCAS, bailleurs, services techniques, centres de formation...)</li>
 <li>Rédaction de bilans et rapports à destination des financeurs (collectivités, État, CDC…)</li>
 <li>Intervention dans des contextes sensibles (copropriétés dégradées, impayés massifs, situations de rupture)</li>
 </ul>
-<p>Ce parcours m’a apporté une forte capacité d’analyse, de gestion de projet, d’autonomie et d’adaptation à des environnements institutionnels variés.</p>
+<p>Ce parcours m'a apporté une forte capacité d'analyse, de gestion de projet, d'autonomie et d'adaptation à des environnements institutionnels variés.</p>
 </li>
 </ul>
 </div>
 </section>
 <section id="skills" style="background-color: var(--color-technos-bg); color: var(--color-text); padding: 3rem 1rem;">
 <h2 style="text-align:center; font-size: 2rem;">────────── Technologies ──────────</h2>
-<div style="max-width: 900px; margin: auto; text-align: center;">
-<h3 style="color: var(--color-accent);">Compétences principales</h3>
-<table style="margin:auto; text-align:center;">
-<tr>
-<th>C</th>
-<th>C++</th>
-<th>Python</th>
-<th>Bash</th>
-<th>Linux</th>
-<th>Git</th>
-</tr>
-<tr>
-<td><img alt="C" src="https://upload.wikimedia.org/wikipedia/commons/1/19/C_Logo.png" width="40"/></td>
-<td><img alt="C++" src="https://upload.wikimedia.org/wikipedia/commons/1/18/ISO_C%2B%2B_Logo.svg" width="40"/></td>
-<td><img alt="Python" src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Python-logo-notext.svg" width="40"/></td>
-<td><img alt="Bash" src="https://upload.wikimedia.org/wikipedia/commons/4/4b/Bash_Logo_Colored.svg" width="40"/></td>
-<td><img alt="Linux" src="https://upload.wikimedia.org/wikipedia/commons/3/35/Tux.svg" width="40"/></td>
-<td><img alt="Git" src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" width="40"/></td>
-</tr>
-</table>
-<h3 style="color: var(--color-accent); margin-top: 2rem;">En cours d’apprentissage</h3>
-<table style="margin:auto; text-align:center;">
-<tr>
-<th>Docker</th>
-<th>Kubernetes</th>
-<th>AWS</th>
-</tr>
-<tr>
-<td><img alt="Docker" src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" width="40"/></td>
-<td><img alt="Kubernetes" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" width="40"/></td>
-<td><img alt="AWS" src="https://upload.wikimedia.org/wikipedia/commons/9/93/Amazon_Web_Services_Logo.svg" width="40"/></td>
-</tr>
-</table>
+<div style="max-width: 900px; margin: auto;">
+
+<h3 style="color: var(--color-accent); text-align: center;">Mes compétences actuelles</h3>
+<div class="skills-grid">
+<div class="skills-category">
+<h4>💻 Programmation & Data</h4>
+<ul class="skills-list">
+<li>Python (NumPy, Pandas, Matplotlib, Scikit-learn)</li>
+<li>Analyse de données, visualisations, web scraping</li>
+<li>C / C++ (École 42)</li>
+<li>Résolution de problèmes algorithmiques</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🐧 Systèmes & Shell</h4>
+<ul class="skills-list">
+<li>Linux (utilisateurs, permissions, processus)</li>
+<li>Bash scripting</li>
+<li>Administration système de base</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🛠️ Outils Dev / DevOps</h4>
+<ul class="skills-list">
+<li>Git / GitHub</li>
+<li>Docker (bases)</li>
+<li>VirtualBox, gestion de VMs</li>
+</ul>
+</div>
+</div>
+
+<h3 style="color: var(--color-accent); text-align: center; margin-top: 3rem;">Objectifs d'apprentissage</h3>
+<div class="skills-grid">
+<div class="skills-category">
+<h4>☁️ Cloud Platforms</h4>
+<ul class="skills-list">
+<li><strong>Priorité : AWS</strong></li>
+<li>EC2, S3, VPC, IAM, RDS</li>
+<li>Certifications : AWS Cloud Practitioner, puis Solutions Architect Associate</li>
+<li><em>En veille :</em> Azure, GCP</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🏗️ Infrastructure as Code</h4>
+<ul class="skills-list">
+<li><strong>Priorité : Terraform</strong></li>
+<li>Syntaxe HCL, modules, gestion de l'état</li>
+<li><em>À connaître :</em> Ansible, CloudFormation</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🐳 Conteneurisation & Orchestration</h4>
+<ul class="skills-list">
+<li><strong>Docker</strong> : Images optimisées, registres privés</li>
+<li><strong>Kubernetes</strong> : Pods, services, Helm, RBAC</li>
+<li><em>En veille :</em> Service Mesh (Istio / Linkerd)</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🔄 CI/CD & Observabilité</h4>
+<ul class="skills-list">
+<li>GitLab CI / GitHub Actions</li>
+<li>Prometheus + Grafana</li>
+<li>ELK Stack</li>
+<li>Jaeger / Zipkin</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>🔐 Sécurité Cloud</h4>
+<ul class="skills-list">
+<li>Moindre privilège, gestion des secrets</li>
+<li>DevSecOps (Trivy, SonarQube, SAST/DAST)</li>
+<li>Conformité : RGPD, ISO 27001</li>
+</ul>
+</div>
+
+<div class="skills-category">
+<h4>💰 FinOps & Optimisation</h4>
+<ul class="skills-list">
+<li>Rightsizing, réservation, nettoyage auto</li>
+<li>AWS Cost Explorer</li>
+<li>Optimisation des coûts cloud</li>
+</ul>
+</div>
+</div>
 </div>
 </section>
 <hr/>
 <section id="portfolio">
 <h2 style="text-align:center; font-size: 2rem;">────────── Portfolio ──────────</h2>
-<div style="background-color: #f5faff; padding: 1.5rem; border-radius: 10px;">
-<h3><a href="https://github.com/ZenabaNouriatte/TwitterSentimentAnalysis" target="_blank">Analyse de sentiment des tweets sur les JO 2024</a></h3>
-<p>Ce projet vise à analyser l’opinion publique sur les Jeux Olympiques de Paris 2024 via plus de 53 000 tweets collectés avec Snscrape. 
-        Les données ont été nettoyées avec Pandas et Regex, puis analysées à l’aide de TextBlob pour en extraire le ton dominant. Résultat : environ 60 % des messages étaient positifs. 
-        J’ai conçu plusieurs visualisations interactives avec Power BI pour mettre en évidence les tendances par période, hashtags et sujets clés.</p>
-<h3><a href="https://github.com/ZenabaNouriatte/BonheurNationalBrut" target="_blank">Modélisation du Bonheur National Brut</a></h3>
-<p>Objectif : identifier les facteurs influençant le bonheur d’une population à partir de données internationales. 
-        J’ai collecté des jeux de données via BeautifulSoup, Selenium et fichiers CSV, avant d’effectuer un nettoyage approfondi et du feature engineering. 
-        Plusieurs modèles de machine learning (régressions, classifications) ont été entraînés avec Scikit-learn. 
-        Une interface utilisateur avec Streamlit permet d’explorer les résultats de façon interactive.</p>
-<h3><a href="https://github.com/ZenabaNouriatte/Inception" target="_blank">Projet Inception (École 42)</a></h3>
-<p>Projet d’infrastructure Dockerisée consistant à déployer une stack complète LEMP (Linux, Nginx, MariaDB, WordPress). 
-        Chaque image a été construite à partir d’un Dockerfile sans utiliser Docker Hub, orchestrée avec Docker Compose et automatisée avec un Makefile. 
-        L’environnement inclut un réseau dédié, des volumes persistants, un certificat SSL et d’autres services complémentaires (Adminer, Redis). 
-        Ce projet m’a permis d’acquérir des compétences concrètes en containerisation, scripting et sécurisation d’une architecture cloud auto-hébergée.</p>
+
+<h3>✅ Projets réalisés</h3>
+<div style="background-color: #f5faff; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+<h4><a href="https://github.com/ZenabaNouriatte/TwitterSentimentAnalysis" target="_blank">Analyse de sentiment des tweets sur les JO 2024</a><span class="project-status status-completed">Terminé</span></h4>
+<p>Analyse de 53 000 tweets avec Pandas, Regex et TextBlob pour analyser l'opinion publique sur les Jeux Olympiques de Paris 2024. Les données ont été nettoyées et analysées pour extraire le ton dominant (environ 60% de messages positifs). Plusieurs visualisations interactives créées avec Power BI pour mettre en évidence les tendances par période, hashtags et sujets clés.</p>
+
+<h4><a href="https://github.com/ZenabaNouriatte/BonheurNationalBrut" target="_blank">Modélisation du Bonheur National Brut</a><span class="project-status status-completed">Terminé</span></h4>
+<p>Identification des facteurs influençant le bonheur d'une population à partir de données internationales. Collecte de données via BeautifulSoup, Selenium et fichiers CSV, nettoyage approfondi et feature engineering. Entraînement de plusieurs modèles de machine learning (régressions, classifications) avec Scikit-learn. Interface utilisateur avec Streamlit pour explorer les résultats de façon interactive.</p>
+
+<h4><a href="https://github.com/ZenabaNouriatte/Inception" target="_blank">Projet Inception (École 42)</a><span class="project-status status-completed">Terminé</span></h4>
+<p>Déploiement d'une infrastructure Dockerisée complète avec stack LEMP (Linux, Nginx, MariaDB, WordPress). Chaque image construite à partir d'un Dockerfile sans utiliser Docker Hub, orchestrée avec Docker Compose et automatisée avec un Makefile. L'environnement inclut un réseau dédié, des volumes persistants, un certificat SSL et services complémentaires (Adminer, Redis).</p>
+</div>
+
+<h3>🔄 Projets en cours</h3>
+<div style="background-color: #fff3cd; padding: 1.5rem; border-radius: 10px; margin-bottom: 2rem;">
+<h4>Déploiement d'un blog statique sur EC2 (AWS)<span class="project-status status-in-progress">En cours</span></h4>
+<p>Mise en place d'une infrastructure AWS avec VM EC2, serveur Nginx et nom de domaine personnalisé. Apprentissage pratique des services AWS de base et configuration d'un environnement de production.</p>
+
+<h4>Infrastructure locale avec Terraform<span class="project-status status-in-progress">En cours</span></h4>
+<p>Provisionnement automatisé de 2 serveurs via modules Terraform maison. Apprentissage de l'Infrastructure as Code et des bonnes pratiques de gestion d'état.</p>
+
+<h4>Projet ft_transcendance (École 42)<span class="project-status status-in-progress">En cours</span></h4>
+<p>Déploiement d'une application web fullstack dans un environnement sécurisé. Mise en place prévue d'une infrastructure cloud containerisée avec Docker, gestion réseau, certificat SSL, monitoring et pratiques DevOps associées.</p>
+</div>
+
+<h3>🚀 Projets à venir</h3>
+<div style="background-color: #e2e3e5; padding: 1.5rem; border-radius: 10px;">
+<h4>Architecture microservices avec Kubernetes<span class="project-status status-planned">Planifié</span></h4>
+<p>Déploiement d'une application en microservices sur cluster Kubernetes avec gestion des services, ingress, monitoring et CI/CD intégré.</p>
+
+<h4>Pipeline DevSecOps complet<span class="project-status status-planned">Planifié</span></h4>
+<p>Création d'un pipeline CI/CD avec intégration de la sécurité (SAST/DAST), tests automatisés, déploiement multi-environnements et monitoring en production.</p>
+
+<h4>Projet multi-cloud avec Terraform<span class="project-status status-planned">Planifié</span></h4>
+<p>Infrastructure hybride déployée sur AWS et Azure avec Terraform, incluant networking inter-cloud, sécurité et haute disponibilité.</p>
 </div>
 </section>
 <hr/>
@@ -267,6 +487,4 @@
 </p>
 </section>
 </body>
-</html>
-
 </html>
