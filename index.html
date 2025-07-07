@@ -191,6 +191,55 @@
       background-color: #e2e3e5;
       color: #383d41;
     }
+
+    .soft-skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      margin-top: 1rem;
+    }
+
+    .soft-skill-item {
+      background-color: #f5faff;
+      border: 1px solid #bfd6ff;
+      border-radius: 6px;
+      padding: 0.8rem;
+      text-align: center;
+      font-size: 0.9rem;
+      font-weight: 500;
+    }
+
+    .languages-section {
+      background-color: #f5faff;
+      border: 1px solid #bfd6ff;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .languages-section h4 {
+      color: var(--color-accent);
+      margin-top: 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #cce0ff;
+      padding-bottom: 0.5rem;
+    }
+
+    .softskills-section {
+      background-color: #f5faff;
+      border: 1px solid #bfd6ff;
+      border-radius: 8px;
+      padding: 1.2rem;
+      margin-top: 1.5rem;
+    }
+
+    .softskills-section h4 {
+      color: var(--color-accent);
+      margin-top: 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid #cce0ff;
+      padding-bottom: 0.5rem;
+    }
   </style>
 <meta content="Portfolio de Zenaba MOGNE – Projets en data, cloud et administration système. Étudiante à l'école 42, disponible dès novembre 2025." name="description"/></head>
 <body>
@@ -202,7 +251,7 @@
 <nav>
 <a href="#presentation">Présentation</a>
 <a href="#parcours">Mon parcours</a>
-<a href="#skills">Technologies</a>
+<a href="#skills">Compétences & projections</a>
 <a href="#portfolio">Portfolio</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -277,7 +326,7 @@
 <h3>Mon parcours de spécialisation</h3>
 <div class="objectives-grid">
 <div class="objective-card">
-<h4>🎯 Objectifs à court terme (fin 2025)</h4>
+<h4>➡️​ Objectifs à court terme (fin 2025)</h4>
 <ul>
 <li>• Terminer le tronc commun de 42</li>
 <li>• Acquérir des bases solides en AWS, Terraform, CI/CD, Kubernetes</li>
@@ -286,7 +335,7 @@
 </ul>
 </div>
 <div class="objective-card">
-<h4>🚀 Objectifs à moyen terme (2026)</h4>
+<h4>➡️​ Objectifs à moyen terme (2026)</h4>
 <ul>
 <li>• Développer une expertise poussée sur AWS</li>
 <li>• Approfondir l'automatisation (IaC) et la sécurité (DevSecOps)</li>
@@ -294,7 +343,7 @@
 </ul>
 </div>
 <div class="objective-card">
-<h4>🎖️ Objectifs à long terme (2026–2027)</h4>
+<h4>➡️​ Objectifs à long terme (2026–2027)</h4>
 <ul>
 <li>• Évoluer vers un rôle de Cloud Engineer, DevOps ou SRE</li>
 <li>• Continuer à monter en compétences techniques et collaboratives</li>
@@ -343,7 +392,7 @@
 </div>
 </section>
 <section id="skills" style="background-color: var(--color-technos-bg); color: var(--color-text); padding: 3rem 1rem;">
-<h2 style="text-align:center; font-size: 2rem;">────────── Technologies ──────────</h2>
+<h2 style="text-align:center; font-size: 2rem;">────────── Compétences & projections ──────────</h2>
 <div style="max-width: 900px; margin: auto;">
 
 <h3 style="color: var(--color-accent); text-align: center;">Mes compétences actuelles</h3>
@@ -435,6 +484,53 @@
 </ul>
 </div>
 </div>
+
+<div class="languages-section">
+<h4>🌐 Langues</h4>
+<ul class="skills-list">
+<li><strong>Français</strong> : Langue maternelle</li>
+<li><strong>Anglais</strong> : Niveau B1+ (en cours de progression vers B2)</li>
+<li>Lecture fluide de documentation technique, veille technologique internationale</li>
+</ul>
+</div>
+
+<div class="softskills-section">
+<h4>🎯 Soft Skills</h4>
+<p>Mon parcours allie des compétences transversales comme la rigueur, l'autonomie et la résolution de problèmes, à des qualités relationnelles solides développées dans des environnements collaboratifs. Ma reconversion vers l'informatique traduit une capacité d'adaptation et une volonté constante d'apprendre. J'accorde également une grande importance à la clarté dans la communication et à la transmission des connaissances.</p>
+
+<div class="soft-skills-grid">
+<div class="soft-skill-item">
+<strong>Autonomie</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Rigueur et sens du détail</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Capacité d'analyse</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Résolution de problèmes</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Esprit d'équipe</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Pédagogie & vulgarisation</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Communication claire</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Apprentissage continu</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Capacité d'adaptation</strong>
+</div>
+<div class="soft-skill-item">
+<strong>Orientation résultats</strong>
+</div>
+</div>
+</div>
 </div>
 </section>
 <hr/>
@@ -465,26 +561,10 @@
 <p>Déploiement d'une application web fullstack dans un environnement sécurisé. Mise en place prévue d'une infrastructure cloud containerisée avec Docker, gestion réseau, certificat SSL, monitoring et pratiques DevOps associées.</p>
 </div>
 
-<h3>🚀 Projets à venir</h3>
+<h3>➡️​ Projets à venir</h3>
 <div style="background-color: #e2e3e5; padding: 1.5rem; border-radius: 10px;">
 <h4>Architecture microservices avec Kubernetes<span class="project-status status-planned">Planifié</span></h4>
 <p>Déploiement d'une application en microservices sur cluster Kubernetes avec gestion des services, ingress, monitoring et CI/CD intégré.</p>
 
 <h4>Pipeline DevSecOps complet<span class="project-status status-planned">Planifié</span></h4>
-<p>Création d'un pipeline CI/CD avec intégration de la sécurité (SAST/DAST), tests automatisés, déploiement multi-environnements et monitoring en production.</p>
-
-<h4>Projet multi-cloud avec Terraform<span class="project-status status-planned">Planifié</span></h4>
-<p>Infrastructure hybride déployée sur AWS et Azure avec Terraform, incluant networking inter-cloud, sécurité et haute disponibilité.</p>
-</div>
-</section>
-<hr/>
-<section id="contact">
-<h2 style="text-align:center; font-size: 2rem;">────────── Contact ──────────</h2>
-<p>Email : <a href="mailto:zenaba.mogne@live.fr">zenaba.mogne@live.fr</a></p>
-<p>
-<a href="https://www.linkedin.com/in/zenaba-mogne/" target="_blank">LinkedIn</a> |
-      <a href="https://github.com/ZenabaNouriatte" target="_blank">GitHub</a>
-</p>
-</section>
-</body>
-</html>
+<p>Création d'un pipeline CI/CD avec intégration de la sécur
