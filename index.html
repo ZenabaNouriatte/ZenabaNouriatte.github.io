@@ -2,652 +2,32 @@
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>MOGNE Zenaba - DevOps & Cloud Engineer</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --color-background: #e8f0fe;
-            --color-text: #1a2e4f;
-            --color-accent: #1a2e4f;
-            --color-secondary: #4a6a9a;
-            --color-highlight: #ffd166;
-            --color-card-bg: #ffffff;
-            --color-card-border: #d0e0f5;
-            --color-nav-active: #cce0ff;
-            --color-link: #2a5cbd;
-            --font-main: 'Inter', sans-serif;
-            --font-heading: 'Space Grotesk', sans-serif;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        body {
-            font-family: var(--font-main);
-            background: linear-gradient(135deg, #e8f0fe 0%, #f0f7ff 100%);
-            color: var(--color-text);
-            line-height: 1.6;
-            min-height: 100vh;
-            padding: 2rem;
-        }
-        
-        /* Layout principal centré */
-        .portfolio-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-        }
-        
-        /* Header avec identité - version compacte */
-        .identity-header {
-            background-color: var(--color-card-bg);
-            border-radius: 16px;
-            padding: 2.5rem;
-            box-shadow: 0 8px 30px rgba(26, 46, 79, 0.08);
-            border: 1px solid var(--color-card-border);
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .identity-header::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 6px;
-            background: linear-gradient(90deg, #1a2e4f, #4a6a9a, #1a2e4f);
-        }
-        
-        .identity-header h1 {
-            font-size: 2.8rem;
-            color: var(--color-accent);
-            margin-bottom: 0.5rem;
-            font-weight: 700;
-            font-family: var(--font-heading);
-            letter-spacing: -0.5px;
-        }
-        
-        .identity-header .title {
-            font-size: 1.3rem;
-            color: var(--color-secondary);
-            margin-bottom: 1.2rem;
-            font-weight: 500;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .identity-header .title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 3px;
-            background: var(--color-highlight);
-            border-radius: 2px;
-        }
-        
-        .identity-header .tagline {
-            font-family: var(--font-main);
-            font-size: 1.1rem;
-            max-width: 700px;
-            margin: 1.5rem auto 1.8rem;
-            color: var(--color-secondary);
-            padding: 1rem;
-            background: rgba(204, 224, 255, 0.25);
-            border-radius: 12px;
-            font-weight: 500;
-        }
-        
-        /* Actions de contact compactes */
-        .identity-actions {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-        
-        .contact-icons {
-            display: flex;
-            gap: 1.2rem;
-        }
-        
-        .contact-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            background-color: rgba(204, 224, 255, 0.3);
-            font-size: 1.2rem;
-            color: var(--color-text);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(26, 46, 79, 0.1);
-        }
-        
-        .contact-icon:hover {
-            background-color: rgba(170, 199, 255, 0.4);
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(26, 46, 79, 0.1);
-        }
-        
-        .cv-download {
-            padding: 0.8rem 1.8rem;
-            background-color: var(--color-accent);
-            color: white;
-            border-radius: 8px;
-            font-weight: 600;
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            transition: all 0.3s ease;
-            font-size: 1rem;
-            box-shadow: 0 4px 6px rgba(26, 46, 79, 0.1);
-        }
-        
-        .cv-download:hover {
-            background-color: #0f2040;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(26, 46, 79, 0.15);
-        }
-        
-        .availability {
-            background: linear-gradient(90deg, var(--color-highlight), #ffde8a);
-            padding: 0.9rem 1.5rem;
-            border-radius: 8px;
-            font-weight: 600;
-            text-align: center;
-            margin: 0 auto;
-            font-size: 1rem;
-            max-width: 500px;
-            box-shadow: 0 4px 8px rgba(255, 209, 102, 0.3);
-            border: 1px solid rgba(255, 209, 102, 0.5);
-        }
-        
-        /* Deux colonnes - Sidebar + Content */
-        .main-container {
-            display: grid;
-            grid-template-columns: 260px 1fr;
-            gap: 2.5rem;
-        }
-        
-        /* Sidebar */
-        .sidebar {
-            background-color: var(--color-card-bg);
-            border-radius: 18px;
-            padding: 1.8rem 1.2rem;
-            box-shadow: 0 8px 30px rgba(26, 46, 79, 0.08);
-            border: 1px solid var(--color-card-border);
-            height: fit-content;
-            position: sticky;
-            top: 2rem;
-        }
-        
-        /* Navigation */
-        .nav-links {
-            list-style: none;
-        }
-        
-        .nav-links li {
-            margin-bottom: 0.8rem;
-        }
-        
-        .nav-links a {
-            display: block;
-            padding: 0.9rem 1.2rem;
-            text-decoration: none;
-            color: var(--color-text);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            display: flex;
-            align-items: center;
-            font-size: 1.05rem;
-            position: relative;
-            overflow: hidden;
-            border: 1px solid rgba(204, 224, 255, 0.5);
-        }
-        
-        .nav-links a::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 4px;
-            height: 100%;
-            background: var(--color-accent);
-            transform: translateX(-100%);
-            transition: transform 0.3s ease;
-        }
-        
-        .nav-links a:hover,
-        .nav-links a.active {
-            background-color: var(--color-nav-active);
-            box-shadow: 0 4px 10px rgba(26, 46, 79, 0.08);
-        }
-        
-        .nav-links a:hover::before,
-        .nav-links a.active::before {
-            transform: translateX(0);
-        }
-        
-        .nav-links a i {
-            margin-right: 14px;
-            font-size: 1.2rem;
-            width: 24px;
-            text-align: center;
-            color: var(--color-secondary);
-        }
-        
-        /* Main content */
-        .main-content {
-            background-color: var(--color-card-bg);
-            border-radius: 18px;
-            padding: 3rem;
-            box-shadow: 0 8px 30px rgba(26, 46, 79, 0.08);
-            border: 1px solid var(--color-card-border);
-        }
-        
-        .section {
-            margin-bottom: 3.5rem;
-        }
-        
-        .section-header {
-            position: relative;
-            margin-bottom: 2.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(204, 224, 255, 0.8);
-        }
-        
-        .section-title {
-            font-size: 2.3rem;
-            color: var(--color-accent);
-            font-weight: 700;
-            font-family: var(--font-heading);
-            letter-spacing: -0.5px;
-            margin-bottom: 0.5rem;
-            position: relative;
-            display: inline-block;
-            padding-right: 2rem;
-        }
-        
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 0;
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
-            border-radius: 2px;
-        }
-    
-        .section-subtitle {
-            font-size: 1.4rem;
-            color: var(--color-secondary);
-            font-weight: 600;
-            margin: 1.5rem 0 1rem;
-            position: relative;
-            padding-left: 1.8rem;
-            font-family: var(--font-heading);
-        }
-        
-        /*.section-subtitle::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 12px;
-            height: 12px;
-            background: var(--color-highlight);
-            border-radius: 50%;
-        }*/
-        
-        /*.section-subtitle.alt::before {
-            background: var(--color-accent);
-        }*/
-        
-        .section-content {
-            padding: 0.5rem 0;
-        }
-        
-        .section-content p {
-            margin-bottom: 1.5rem;
-            font-size: 1.1rem;
-            line-height: 1.7;
-            color: var(--color-text);
-        }
-        
-        .section-content ul {
-            padding-left: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        .section-content li {
-            margin-bottom: 1rem;
-            font-size: 1.1rem;
-            position: relative;
-            padding-left: 1.5rem;
-        }
-        
-        .section-content li::before {
-            /*content: '•';
-            position: absolute;
-            left: 0;
-            color: var(--color-highlight);
-            font-size: 1.5rem;
-            line-height: 1;*/
-            display: none !important;
-        }
-        
-        /* Footer */
-        footer {
-            text-align: center;
-            padding: 2.5rem 0 1.5rem;
-            margin-top: 3rem;
-            font-size: 1rem;
-            color: #5a7a9a;
-            border-top: 1px solid var(--color-card-border);
-        }
-        
-        .visit-counter {
-            font-family: var(--font-heading);
-            background-color: rgba(204, 224, 255, 0.3);
-            display: inline-block;
-            padding: 0.6rem 1.2rem;
-            border-radius: 30px;
-            margin-bottom: 1.2rem;
-            font-size: 0.95rem;
-            font-weight: 600;
-            border: 1px solid rgba(204, 224, 255, 0.5);
-        }
-
-        ul {
-        list-style: none; /* supprime les puces noires natives */
-        padding-left: 0;
-        margin-left: 0;
-    }
-
-        
-        /* Responsive */
-        @media (max-width: 900px) {
-            .main-container {
-                grid-template-columns: 1fr;
-            }
-            
-            .sidebar {
-                position: relative;
-                top: 0;
-                margin-bottom: 2rem;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            body {
-                padding: 1.5rem;
-            }
-            
-            .identity-header {
-                padding: 1.8rem;
-            }
-            
-            .identity-header h1 {
-                font-size: 2.3rem;
-            }
-            
-            .main-content {
-                padding: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-
-            .section {
-                display: none;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .identity-header {
-                padding: 1.5rem;
-            }
-            
-            .identity-header h1 {
-                font-size: 2rem;
-            }
-            
-            .main-content {
-                padding: 1.5rem;
-            }
-            
-            .identity-actions {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .contact-icons {
-                justify-content: center;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-        }
-        
-        /* Animation pour les sections */
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        
-        .section {
-            animation: fadeIn 0.6s ease-out forwards;
-        }
-        
-        /* Styles spécifiques */
-        .card {
-            border: 1px solid var(--color-card-border);
-            padding: 1.8rem;
-            border-radius: 14px;
-            background-color: #f5faff;
-            margin-bottom: 1.8rem;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.03);
-        }
-        
-        .project-title {
-            font-size: 1.3rem;
-            color: var(--color-accent);
-            font-weight: 700;
-            margin: 1.2rem 0 0.8rem;
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-            font-family: var(--font-heading);
-        }
-        
-        .project-title a {
-            color: var(--color-secondary);
-            font-size: 1.1rem;
-        }
-        
-        .project-status {
-            display: inline-block;
-            padding: 0.3rem 0.8rem;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: bold;
-            margin-left: 0.8rem;
-        }
-        
-        .status-completed {
-            background-color: #d4edda;
-            color: #155724;
-        }
-        
-        .status-in-progress {
-            background-color: #fff3cd;
-            color: #856404;
-        }
-        
-        .status-planned {
-            background-color: #e2e3e5;
-            color: #383d41;
-        }
-        
-        .objectives-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.8rem;
-            margin-top: 1.5rem;
-        }
-        
-        .objective-card {
-            border: 1px solid var(--color-card-border);
-            padding: 1.5rem;
-            border-radius: 12px;
-            background-color: #f5faff;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
-            transition: transform 0.3s ease;
-        }
-        
-        .objective-card:hover {
-            transform: translateY(-5px);
-        }
-        
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-        
-        .skills-category {
-            background-color: #f5faff;
-            border: 1px solid var(--color-card-border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
-        }
-        
-        .skills-category h4 {
-            color: var(--color-accent);
-            margin-top: 0;
-            font-size: 1.2rem;
-            font-weight: 700;
-            border-bottom: 2px solid var(--color-highlight);
-            padding-bottom: 0.7rem;
-            margin-bottom: 1rem;
-            font-family: var(--font-heading);
-        }
-        
-        .skills-list {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .skills-list li {
-            padding: 0.5rem 0;
-            font-size: 1rem;
-            border-bottom: 1px dashed rgba(204, 224, 255, 0.8);
-            padding-bottom: 0.5rem;
-        }
-        
-        .skills-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .soft-skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 1.2rem;
-            margin-top: 1.5rem;
-        }
-        
-        .soft-skill-item {
-            background-color: #f5faff;
-            border: 1px solid var(--color-card-border);
-            border-radius: 10px;
-            padding: 1rem;
-            text-align: center;
-            font-size: 1rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.03);
-        }
-        
-        .soft-skill-item:hover {
-            transform: translateY(-5px);
-            background-color: var(--color-nav-active);
-        }
-        
-        .contact-item {
-            display: flex;
-            align-items: center;
-            margin-bottom: 1.2rem;
-            padding: 1rem;
-            background: rgba(204, 224, 255, 0.2);
-            border-radius: 10px;
-            transition: all 0.3s ease;
-        }
-        
-        .contact-item:hover {
-            background: rgba(204, 224, 255, 0.4);
-            transform: translateX(5px);
-        }
-        
-        .contact-item i {
-            margin-right: 15px;
-            width: 40px;
-            height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: var(--color-accent);
-            color: white;
-            border-radius: 50%;
-            font-size: 1.2rem;
-        }
-        
-        .quote {
-            font-style: italic;
-            color: var(--color-secondary);
-            margin-top: 2.5rem;
-            padding: 1.8rem;
-            background: rgba(204, 224, 255, 0.2);
-            border-radius: 14px;
-            border-left: 4px solid var(--color-highlight);
-            font-size: 1.1rem;
-            line-height: 1.7;
-        }
-        
-        /* Effets de dégradé sur les titres */
-        .gradient-text {
-            background: linear-gradient(90deg, var(--color-accent), var(--color-secondary));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Bouton Burger (mobile seulement) -->
+    <button class="mobile-menu-btn" id="menuBtn">
+        <i class="fas fa-bars"></i>
+    </button>
+
+    <!-- Menu Mobile (mobile seulement) -->
+    <nav class="mobile-nav" id="mobileNav">
+        <ul class="nav-links">
+            <li><a href="#presentation" class="active"><i class="fas fa-user"></i> Présentation</a></li>
+            <li><a href="#parcours"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
+            <li><a href="#competences"><i class="fas fa-laptop-code"></i> Compétences</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Contenu -->
     <div class="portfolio-container">
-        <!-- Header compact avec identité -->
+        <!-- Header (grand sur desktop, compact sur mobile) -->
         <header class="identity-header">
             <h1>MOGNE Zenaba</h1>
             <div class="title">Étudiante à l'école 42 | Cloud & DevOps | 📍 Paris</div>
@@ -678,21 +58,20 @@
                 </a>
             </div>
         </header>
-        
-        <!-- Deux colonnes principales -->
+
+        <!-- Conteneur principal -->
         <div class="main-container">
-            <!-- Sidebar sans titre "Navigation" -->
+            <!-- Sidebar (desktop seulement) -->
             <aside class="sidebar">
                 <ul class="nav-links">
                     <li><a href="#presentation" class="active"><i class="fas fa-user"></i> Présentation</a></li>
-                    <li><a href="#parcours"><i class="fas fa-graduation-cap"></i> Mon parcours</a></li>
+                    <li><a href="#parcours"><i class="fas fa-graduation-cap"></i> Parcours</a></li>
                     <li><a href="#competences"><i class="fas fa-laptop-code"></i> Compétences</a></li>
                     <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
                     <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
                 </ul>
             </aside>
             
-            <!-- Main content -->
             <main class="main-content">
                 <!-- Section Présentation -->
                 <section id="presentation" class="section">
@@ -705,6 +84,7 @@
                         <div class="card">
                             <p>Je m'appelle <strong>Zenaba</strong>, j'ai 33 ans et je suis étudiante à <strong>l'école 42</strong>.
                                 Actuellement en reconversion vers les métiers de l'infrastructure, du cloud et du DevOps.</p>
+                            <br>
                             <p>Après une première carrière de dix ans dans le secteur social, j'ai choisi de donner un nouvel élan à ma trajectoire professionnelle. Je me suis tournée vers le numérique, un domaine en constante évolution, à fort impact, où l'apprentissage continu est essentiel.</p>
                         </div>
 
@@ -716,11 +96,11 @@
                             <p>Ce qui me passionne dans le Cloud, c'est l'alliance entre complexité technique, impact business, et résilience des systèmes. J'aime comprendre les briques, les faire dialoguer et créer un tout fiable.</p>
 
                             <h4 class="section-subtitle alt">Domaines d'expertise cibles</h4>
-                            <ul>
-                                <li>☁️ <strong>Cloud Computing</strong> : Conception et déploiement d'architectures multi-cloud</li>
-                                <li>🔐 <strong>DevSecOps</strong> : Intégration de la sécurité dans les pipelines CI/CD</li>
-                                <li>🛠️ <strong>Infrastructure as Code</strong> : Automatisation complète des déploiements</li>
-                                <li>📊 <strong>Monitoring & Observabilité</strong> : Garantir la fiabilité des services en production</li>
+                            <ul class="subsection-body">
+                                <p>☁️ <strong>Cloud Computing</strong> : Conception et déploiement d'architectures multi-cloud (avec un intérêt particulier pour AWS)</p>
+                                <p>🔐 <strong>DevSecOps</strong> : Intégration de la sécurité dans les pipelines CI/CD</p>
+                                <p>🛠️ <strong>Infrastructure as Code</strong> : Automatisation complète des déploiements</p>
+                                <p>📊 <strong>Monitoring & Observabilité</strong> : Garantir la fiabilité des services en production</p>
                             </ul>
 
                             <h4 class="section-subtitle alt">Mon approche</h4>
@@ -734,20 +114,20 @@
 
                             <h4 class="section-subtitle alt">Environnement professionnel idéal</h4>
                             <p>Je recherche un cadre où je pourrai :</p>
-                            <ul>
-                                <li>• Travailler sur des infrastructures à fort impact business</li>
-                                <li>• Collaborer avec des équipes pluridisciplinaires (Dev, Ops, Sec)</li>
-                                <li>• Contribuer à des projets innovants</li>
-                                <li>• Évoluer dans une culture de partage et d'amélioration continue</li>
+                            <ul class="subsection-body">
+                                <p>› Travailler sur des infrastructures à fort impact business</p>
+                                <p>› Collaborer avec des équipes pluridisciplinaires (Dev, Ops, Sec)</p>
+                                <p>› Contribuer à des projets innovants</p>
+                                <p>› Évoluer dans une culture de partage et d'amélioration continue</p>
                             </ul>
 
                             <h4 class="section-subtitle alt">Types de missions recherchées</h4>
-                            <ul>
-                                <li>• <strong>Migration vers le Cloud</strong> : modernisation d'infrastructures legacy</li>
-                                <li>• <strong>Automatisation DevOps</strong> : déploiements industrialisés, réduction du time-to-market</li>
-                                <li>• <strong>Sécurité Cloud</strong> : mise en place d'architectures Zero Trust, DevSecOps, monitoring avancé</li>
-                                <li>• <strong>Observabilité</strong> : centralisation des logs, supervision, traçabilité</li>
-                                <li>• <strong>Optimisation des coûts (FinOps)</strong> : gestion et optimisation des ressources cloud</li>
+                            <ul class="subsection-body">
+                                <p><strong>› Migration vers le Cloud</strong> : modernisation d'infrastructures legacy</p>
+                                <p><strong>› Automatisation DevOps</strong> : déploiements industrialisés, réduction du time-to-market</p>
+                                <p><strong>› Sécurité Cloud</strong> : mise en place d'architectures Zero Trust, DevSecOps, monitoring avancé</p>
+                                <p><strong>› Observabilité</strong> : centralisation des logs, supervision, traçabilité</p>
+                                <p><strong>› Optimisation des coûts (FinOps)</strong> : gestion et optimisation des ressources cloud</p>
                             </ul>
 
                             <h4 class="section-subtitle alt">Technologies et écosystèmes</h4>
@@ -755,10 +135,10 @@
 
 
                             <h4 class="section-subtitle alt">Secteurs d'activité privilégiés</h4>
-                            <ul>
-                                <li>• <strong>Tech & Startups</strong> : infrastructures élastiques, bonnes pratiques à mettre en place dès le début</li>
-                                <li>• <strong>Industrie & IoT</strong> : enjeux concrets (production, logistique, sécurité) avec systèmes connectés</li>
-                                <li>• <strong>Éducation / Santé / Associatif</strong> : impact humain fort et besoins croissants en transformation numérique</li>
+                            <ul class="subsection-body">
+                                <p> <strong>Tech & Startups</strong> : infrastructures élastiques, bonnes pratiques à mettre en place dès le début</p>
+                                <p> <strong>Industrie & IoT</strong> : enjeux concrets (production, logistique, sécurité) avec systèmes connectés</p>
+                                <p> <strong>Éducation / Santé / Associatif</strong> : impact humain fort et besoins croissants en transformation numérique</p>
                             </ul>
                         </div>
                     </div>
@@ -775,8 +155,14 @@
                       <h3 class="section-subtitle">Mon chemin vers le cloud</h3>
                       <div class="card">
                         <p>J’ai amorcé ma reconversion en 2022 avec un bootcamp en Data Analyse, puis intégré l’École 42 fin 2023.</p>
+                        <br>
                         <p>Depuis 2025, en parallèle de mon cursus à 42, je me spécialise dans le Cloud et le DevOps.</p>
-                        <p><strong>Mon objectif :</strong> devenir <strong>AWS Solution Architect</strong>, certifiée et capable de concevoir des architectures cloud robustes et sécurisées.</p>
+
+                        <p class="highlight-goal"><strong>Mon objectif :</strong>
+                            <br>
+                            <br>
+                            Devenir <strong>AWS Solution Architect</strong>, certifiée et capable de concevoir des architectures cloud robustes et sécurisées.</p>
+
                       </div>
                   
                       <!-- Objectifs de spécialisation -->
@@ -784,27 +170,37 @@
                       <div class="objectives-grid">
                         <div class="objective-card">
                           <h4>➡️ Objectifs à court terme (fin 2025)</h4>
+                          <br>
                           <ul>
-                            <li>Terminer le tronc commun de 42</li>
-                            <li>Acquérir des bases solides en AWS, Terraform, CI/CD, Kubernetes</li>
-                            <li>Obtenir une première certification cloud</li>
-                            <li>Effectuer un stage, idéalement en environnement AWS</li>
+                            <p>•   Terminer le tronc commun de 42</p>
+                            <br>
+                            <p>•   Acquérir des bases solides en AWS, Terraform, CI/CD, Kubernetes</p>
+                            <br>
+                            <p>•   Obtenir une première certification cloud</p>
+                            <br>
+                            <p>•  Effectuer un stage, idéalement en environnement AWS</p>
                           </ul>
                         </div>
                         <div class="objective-card">
                           <h4>➡️ Objectifs à moyen terme (2026)</h4>
+                          <br>
                           <ul>
-                            <li>Développer une expertise poussée sur AWS</li>
-                            <li>Approfondir l'automatisation (IaC) et la sécurité (DevSecOps)</li>
-                            <li>Intervenir sur des architectures complexes</li>
+                            <p>•   Développer une expertise poussée sur AWS</p>
+                            <br>
+                            <p>•   Approfondir l'automatisation (IaC) et la sécurité (DevSecOps)</p>
+                            <br>
+                            <p>•   Intervenir sur des architectures complexes</p>
                           </ul>
                         </div>
                         <div class="objective-card">
                           <h4>➡️ Objectifs à long terme (2026–2027)</h4>
+                          <br>
                           <ul>
-                            <li>Évoluer vers un rôle de Cloud Engineer, DevOps ou SRE</li>
-                            <li>Continuer à monter en compétences techniques et collaboratives</li>
-                            <li>Contribuer à des projets d'envergure</li>
+                            <p>•   Évoluer vers de Cloud Architect, Cloud Engineer, DevOps ou SRE</p>
+                            <br>
+                            <p>•   Continuer à monter en compétences techniques et collaboratives</p>
+                            <br>
+                            <p>•   Contribuer à des projets d'envergure</p>
                           </ul>
                         </div>
                       </div>
@@ -816,6 +212,7 @@
                           <h4>🎓 Parcours social</h4>
                           <ul class="skills-list">
                             <li><strong>Licence - Diplôme d'État de Conseiller en Économie Sociale Familiale</strong><br/>2013</li>
+                            <br>
                             <li><strong>BTS Économie Sociale Familiale – Lycée Camille Pissarro (Pontoise)</strong><br/>2012</li>
                           </ul>
                         </div>
@@ -824,6 +221,7 @@
                           <h4>💻 Parcours tech</h4>
                           <ul class="skills-list">
                             <li><strong>Formation à l'École 42 Paris</strong><br/>Depuis novembre 2023<br/>Formation par projets en programmation, systèmes et réseaux.</li>
+                            <br>
                             <li><strong>Bootcamp Data Analyst – DataScientest x La Sorbonne</strong><br/>Avril – Juin 2023<br/>Python, Pandas, SQL, Machine Learning, projet de fin d’étude.</li>
                           </ul>
                         </div>
@@ -832,11 +230,12 @@
                   <h3 class="section-subtitle">Expériences professionnelles</h3>
                     <h4 style="margin-bottom: 0;">Chargée de mission sociale – Léonie Chatelain</h4>
                     <div style="font-style: italic; margin-top: 0;">2013 - 2023</div>
-
-                    <p>Mise en œuvre et coordination de <strong>plus de 30 dispositifs publics</strong> autour du logement, de la précarité et de la retraite.</p>
-                    <p>Intervention dans des <strong>contextes sensibles</strong> (copropriétés dégradées, impayés, ruptures), en accompagnant des publics fragilisés.</p>
-
+                    <br>
+                    <p>- Mise en œuvre et coordination de <strong>plus de 30 dispositifs publics</strong> autour du logement, de la précarité et de la retraite.</p>
+                    <p>- Intervention dans des <strong>contextes sensibles</strong> (copropriétés dégradées, impayés, ruptures), en accompagnant des publics fragilisés.</p>
+                    <br>
                     <p><strong>Mes missions incluaient :</strong></p>
+                    <br>
                     <ul class="skills-list" style="list-style: disc; padding-left: 1.5rem;">
                     <li>Coordination simultanée de 5 à 6 dispositifs thématiques avec partenaires locaux</li>
                     <li>Définition de stratégies d’accompagnement adaptées à chaque contexte</li>
@@ -844,12 +243,12 @@
                     <li>Construction et animation de réseaux de partenaires</li>
                     <li>Rédaction de bilans et rapports pour les financeurs</li>
                     </ul>
+                    <br>
                     <p>Ce parcours m’a permis de développer une solide expertise en <strong>gestion de projet</strong>, <strong>analyse de données</strong> et <strong>coordination multi-acteurs</strong>, ainsi qu'une grande <strong>autonomie</strong> et <strong>adaptabilité</strong>.</p>
                     </div>
                 </section>
-
-                  
                 
+                <!-- Section Compétences -->
                 <section id="competences" class="section">
                     <div class="section-header">
                       <h2 class="section-title gradient-text">Compétences & projections</h2>
@@ -977,7 +376,8 @@
                     </div>
                   </section>
 
-                   <!-- Section Portfolio -->
+                
+                <!-- Section Portfolio -->
                 <section id="portfolio" class="section">
                     <div class="section-header">
                         <h2 class="section-title">Portfolio</h2>
@@ -991,37 +391,57 @@
                                 <a href="https://github.com/ZenabaNouriatte/TwitterSentimentAnalysis" target="_blank">🔗</a>
                                 <span class="project-status status-completed">Terminé</span>
                             </div>
-                            <p>
-                                Analyse de 53 000 tweets avec Pandas, Regex et TextBlob pour analyser l'opinion publique sur les Jeux Olympiques de Paris 2024.
-                                Les données ont été nettoyées et analysées pour extraire le ton dominant (environ 60 % de messages positifs).
-                                Plusieurs visualisations interactives créées avec Power BI pour mettre en évidence les tendances par période, hashtags et sujets clés.
-                            </p>
+                            <div class="project-steps">
+                                <div> Analyse de 53 000 tweets avec Pandas, Regex et TextBlob pour analyser l'opinion publique sur les Jeux Olympiques de Paris 2024.</div>
+                                <div> Les données ont été nettoyées et analysées pour extraire le ton dominant (environ 60 % de messages positifs).</div>
+                                <div> Plusieurs visualisations interactives créées avec Power BI pour mettre en évidence les tendances par période, hashtags et sujets clés.</div>
+                            </div>
+                            <br>
+                              
 
                             <div class="project-title">
                                 <i class="fas fa-chart-line"></i> Modélisation du Bonheur National Brut
                                 <a href="https://github.com/ZenabaNouriatte/BonheurNationalBrut" target="_blank">🔗</a>
                                 <span class="project-status status-completed">Terminé</span>
                             </div>
-                            <p>
-                                Identification des facteurs influençant le bonheur d'une population à partir de données internationales.
-                                Collecte de plus de 20 000 données via BeautifulSoup, Selenium et fichiers CSV.
-                                Nettoyage avancé, réduction de 30 % des variables par feature engineering et visualisation via Matplotlib.
-                                Entraînement de plusieurs modèles de machine learning (régression linéaire, classification) avec Scikit-learn.
-                                Interface utilisateur créée avec Streamlit pour explorer les résultats de façon interactive.
-                            </p>
+                            <div class="project-steps">
+                                <div> Identification des facteurs influençant le bonheur d'une population à partir de données internationales.</div>
+                                <div> Collecte de plus de 20 000 données via BeautifulSoup, Selenium et fichiers CSV.</div>
+                                <div> Nettoyage avancé, réduction de 30 % des variables par feature engineering et visualisation via Matplotlib.</div>
+                                <div> Entraînement de plusieurs modèles de machine learning (régression linéaire, classification) avec Scikit-learn.</div>
+                                <div> Interface utilisateur créée avec Streamlit pour explorer les résultats de façon interactive.</div>
+                            </div>
+                            <br>
 
                             <div class="project-title">
                                 <i class="fas fa-server"></i> Projet Inception (École 42)
                                 <a href="https://github.com/ZenabaNouriatte/Inception" target="_blank">🔗</a>
                                 <span class="project-status status-completed">Terminé</span>
                             </div>
-                            <p>
-                                Déploiement d'une infrastructure Dockerisée complète avec stack LEMP (Linux, Nginx, MariaDB, WordPress).
-                                Chaque image a été construite à partir d'un Dockerfile personnalisé (aucune image Docker Hub utilisée),
-                                orchestrée avec Docker Compose et automatisée via Makefile.
-                                Configuration réseau dédiée, volumes persistants, certificat SSL, et services complémentaires : Adminer, Redis.
-                            </p>
+                            <div class="project-steps">
+                                <div> Déploiement d'une infrastructure Dockerisée complète avec stack LEMP (Linux, Nginx, MariaDB, WordPress).</div>
+                                    <div> Chaque image a été construite à partir d'un Dockerfile personnalisé (aucune image Docker Hub utilisée),
+                                orchestrée avec Docker Compose et automatisée via Makefile.</div>
+                                <div> Configuration réseau dédiée, volumes persistants, certificat SSL, et services complémentaires : Adminer, Redis.</div>
+                            </div>
+                            <br>
+
+                            <div class="project-title">
+                                <i class="fab fa-aws"></i> Déploiement d’un blog statique sur AWS (S3 + Lambda)
+                                <span class="project-status status-completed">Terminé</span>
+                            </div>
+                            <div class="project-steps">
+                            <p>Hébergement d’un blog statique avec nom de domaine personnalisé et suivi des visites :</p>
+                                <div>Stockage statique dans un bucket S3</div>
+                                <div>Nom de domaine configuré via Route53</div>
+                                <div>Certificat SSL via AWS Certificate Manager</div>
+                                <div>Compteur de visites géré par une fonction Lambda</div>
+                                <div>Stockage des données de visites dans DynamoDB</div>
+                            </div>
+                                🎯 <strong>Objectif :</strong> Maîtriser les services fondamentaux d’AWS dans un projet concret (S3, Lambda, Route53, DynamoDB)
+                            </ul>
                         </div>
+                        <br>
 
                         <h3 class="section-subtitle">🔄 Projets en cours</h3>
                         <div class="card" style="background-color: #fffaf0;">
@@ -1029,38 +449,29 @@
                                 <i class="fas fa-comments"></i> FT_IRC – Serveur IRC personnalisé (Projet 42)
                                 <span class="project-status status-in-progress">En cours</span>
                             </div>
+                            <div class="project-steps">
                             <p>Développement d'un serveur basé sur le protocole IRC RFC1459 en C++.</p>
-                            <ul>
-                                <li>Programmation réseau avec sockets TCP/IP</li>
-                                <li>Création de canaux, gestion des commandes des clients</li>
-                                <li>🎯 <strong>Objectif :</strong> Approfondir la compréhension des protocoles réseau et des systèmes bas niveau</li>
-                            </ul>
+                                <div>Programmation réseau avec sockets TCP/IP</div>
+                                <div>Création de canaux, gestion des commandes des clients</div>
+                            </div>
+                                🎯 <strong>Objectif :</strong> Approfondir la compréhension des protocoles réseau et des systèmes bas niveau
+                            <br>
+                            <br>
 
                             <div class="project-title">
                                 <i class="fas fa-gamepad"></i> Ft_transcendance – Déploiement d'une application web fullstack (Projet 42)
                                 <span class="project-status status-in-progress">En cours</span>
                             </div>
-                            <p>Déploiement d'une application de pong multijoueur dans un environnement sécurisé et industrialisé :</p>
-                            <ul>
-                                <li>Backend (NestJS), frontend (React) et base de données PostgreSQL, le tout dockerisé</li>
-                                <li>Reverse proxy NGINX, certificat SSL, pipeline CI/CD</li>
-                                <li><strong>Rôle visé :</strong> prise en charge de l'infrastructure : containerisation, réseau, sécurité, monitoring, déploiement et automatisation</li>
-                                <li>🎯 <strong>Objectif :</strong> Mettre en pratique les compétences DevOps dans un environnement collaboratif</li>
+                            <div class="project-steps">
+                                <p>Déploiement d'une application de pong multijoueur dans un environnement sécurisé et industrialisé :</p>
+                                    <div>Backend , frontend  et base de données, le tout dockerisé</div>
+                                    <div>Reverse proxy NGINX, certificat SSL, pipeline CI/CD</div>
+                            </div>
+                                <strong>Rôle visé :</strong> prise en charge de l'infrastructure : containerisation, réseau, sécurité, monitoring, déploiement et automatisation
+                                  <p><strong>🎯 Objectif :</strong> Mettre en pratique les compétences DevOps dans un environnement collaboratif</p>
                             </ul>
 
-                            <div class="project-title">
-                                <i class="fab fa-aws"></i> Déploiement d’un blog statique sur AWS (S3 + Lambda)
-                                <span class="project-status status-in-progress">En cours</span>
-                            </div>
-                            <p>Hébergement d’un blog statique avec nom de domaine personnalisé et suivi des visites :</p>
-                            <ul>
-                                <li>Stockage statique dans un bucket S3</li>
-                                <li>Nom de domaine configuré via Route53</li>
-                                <li>Certificat SSL via AWS Certificate Manager</li>
-                                <li>Compteur de visites géré par une fonction Lambda</li>
-                                <li>Stockage des données de visites dans DynamoDB</li>
-                                <li>🎯 <strong>Objectif :</strong> Maîtriser les services fondamentaux d’AWS dans un projet concret (S3, Lambda, Route53, DynamoDB)</li>
-                            </ul>
+                            
                             
                         </div>
 
@@ -1070,157 +481,153 @@
                                 <i class="fas fa-cubes"></i> Architecture microservices avec Kubernetes
                                 <span class="project-status status-planned">Planifié</span>
                             </div>
-                            <p>Déploiement d'une application en microservices sur un cluster Kubernetes :</p>
-                            <ul>
-                                <li>Gestion des services, ingress controller et volumes persistants</li>
-                                <li>Monitoring avec Prometheus et Grafana</li>
-                                <li>Déploiement automatisé avec pipeline CI/CD intégré</li>
-                                <li>🎯 <strong>Objectif :</strong> Comprendre l'orchestration de conteneurs et les architectures scalables</li>
-                            </ul>
+                            <div class="project-steps">
+                                <p>Déploiement d'une application en microservices sur un cluster Kubernetes :</p>
+                                    <div>Gestion des services, ingress controller et volumes persistants</div>
+                                    <div>Monitoring avec Prometheus et Grafana</div>
+                                    <div>Déploiement automatisé avec pipeline CI/CD intégré</div>
+                            </div>
+                                🎯 <strong>Objectif :</strong> Comprendre l'orchestration de conteneurs et les architectures scalables
+                            <br>
+                            <br>
 
                             <div class="project-title">
                                 <i class="fas fa-shield-alt"></i> Pipeline DevSecOps complet
                                 <span class="project-status status-planned">Planifié</span>
                             </div>
-                            <p>Création d'un pipeline CI/CD sécurisé et automatisé :</p>
-                            <ul>
-                                <li>Analyse statique du code, scan de vulnérabilités, tests automatisés</li>
-                                <li>Déploiement avec GitHub Actions ou GitLab CI/CD</li>
-                                <li>🎯 <strong>Objectif :</strong> Automatiser le cycle de vie logiciel avec une approche centrée sur la sécurité</li>
+                            <div class="project-steps">
+                                <p>Création d'un pipeline CI/CD sécurisé et automatisé :</p>
+                                    <div>Analyse statique du code, scan de vulnérabilités, tests automatisés</div>
+                                    <div>Déploiement avec GitHub Actions ou GitLab CI/CD</div>
+                            </div>
+                                🎯 <strong>Objectif :</strong> Automatiser le cycle de vie logiciel avec une approche centrée sur la sécurité
                             </ul>
                         </div>
                     </div>
                 </section>
-                  
                 
                 <!-- Section Contact -->
                 <section id="contact" class="section">
                     <div class="section-header">
-                        <h2 class="section-title">Contact</h2>
+                      <h2 class="section-title">Contact</h2>
                     </div>
-                    
+                  
                     <div class="section-content">
-                        <div class="card">
-                            <p style="margin-bottom: 1.5rem; font-size: 1.2rem;">
-                                Une question, une proposition, une idée ou une opportunité ? Contactez-moi !
-                            </p>
-
-                            <div class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                <div>
-                                    <strong>Email :</strong> 
-                                    <a href="mailto:zenaba.mogne@live.fr">zenaba.mogne@live.fr</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <i class="fab fa-linkedin-in"></i>
-                                <div>
-                                    <strong>LinkedIn :</strong> 
-                                    <a href="https://www.linkedin.com/in/zenaba-mogne/" target="_blank">linkedin.com/in/zenaba-mogne/</a>
-                                </div>
-                            </div>
-                            
-                            <div class="contact-item">
-                                <i class="fab fa-github"></i>
-                                <div>
-                                    <strong>GitHub :</strong> 
-                                    <a href="https://github.com/ZenabaNouriatte" target="_blank">github.com/ZenabaNouriatte</a>
-                                </div>
-                            </div>
-
-                            <div class="quote" style="text-align: center;">
-                                <i class="fas fa-quote-left" style="opacity: 0.6; margin-right: 10px;"></i> 
-                                From social impact to cloud infrastructure – ready to apply human-centered problem-solving to technical challenges.
-                            </div>
-                            
+                      <div class="card">
+                        <div class="quote" style="text-align: center;">
+                        Une question, une idée, une collaboration ou une opportunité dans le cloud ou le DevOps ? <br>Je suis toujours ravie d’échanger !
+                    </div>  
+                        </p>
+                        <br>
+                        <div class="contact-item">
+                          <i class="fas fa-envelope"></i>
+                            <strong> Email :</strong>  
+                            <a href="mailto:zenaba.mogne@live.fr">zenaba.mogne@live.fr</a>
                         </div>
+                        <br>
+                        <div class="contact-item">
+                          <i class="fab fa-linkedin-in"></i>
+                            <strong> LinkedIn :</strong>
+                            <a href="https://www.linkedin.com/in/zenaba-mogne/" target="_blank">linkedin.com/in/zenaba-mogne/</a>
+                        </div>
+                        <br>
+                        <div class="contact-item">
+                          <i class="fab fa-github"></i>
+                            <strong> GitHub :</strong>
+                            <a href="https://github.com/ZenabaNouriatte" target="_blank">github.com/ZenabaNouriatte</a>
+                        </div>
+                  
+                        <br><br>
+                  
+                        <div class="quote" style="text-align: center;">
+                          <i class="fas fa-quote-left" style="opacity: 0.6; margin-right: 10px;"></i> 
+                          Open to building, learning, and growing — especially in the cloud ☁️
+                          <i class="fas fa-quote-right" style="opacity: 0.6; margin-left: 10px;"></i>
+                        </div>
+                      </div>
                     </div>
-                </section>
+                  </section>
+                  
             </main>
         </div>
         
-        <!-- Footer -->
         <footer>
-            <div class="visit-counter">
-                <i class="fas fa-eye"></i> Visites: 1245
-            </div>
             <p>© 2025 MOGNE Zenaba - Portfolio Professionnel</p>
         </footer>
     </div>
 
+    <!-- Compteur de visites -->
+    <div class="visit-counter" id="visitCounter">
+        <i class="fas fa-eye"></i> <span id="visitCount">Chargement...</span>
+    </div>
+
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const navLinks = document.querySelectorAll('.nav-links a');
-            const sections = document.querySelectorAll('.section');
-    
-            function showSection(sectionId) {
-                sections.forEach(sec => {
-                    sec.style.display = sec.id === sectionId ? 'block' : 'none';
-                });
+        // Gestion du menu burger (mobile)
+        const menuBtn = document.getElementById('menuBtn');
+        const mobileNav = document.getElementById('mobileNav');
+
+        if (menuBtn && mobileNav) {
+            menuBtn.addEventListener('click', function() {
+                mobileNav.classList.toggle('active');
+            });
+        }
+
+        // Navigation commune
+        function handleNavigation(e) {
+            if (e) e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            
+            // Cache toutes les sections
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            
+            // Affiche la section cible
+            document.querySelector(targetId).classList.add('active');
+            
+            // Met à jour l'état actif
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+            });
+            this.classList.add('active');
+            
+            // Ferme le menu mobile si ouvert
+            if (mobileNav) mobileNav.classList.remove('active');
+            
+            // Scroll vers le haut sur mobile seulement
+            if (window.innerWidth <= 900) {
+                window.scrollTo(0, 0);
             }
-    
-            // On affiche par défaut la première section
-            showSection('presentation');
-    
-            navLinks.forEach(link => {
-                link.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    
-                    const targetId = this.getAttribute('href').substring(1); // remove #
-                    showSection(targetId);
-    
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                });
-            });
+        }
+
+        // Écouteurs pour mobile
+        document.querySelectorAll('.mobile-nav a').forEach(link => {
+            link.addEventListener('click', handleNavigation);
         });
-    </script>
-    
-    
-    <!-- <script>
-        // Navigation active
+        
+        // Écouteurs pour desktop
+        document.querySelectorAll('.sidebar .nav-links a').forEach(link => {
+            link.addEventListener('click', handleNavigation);
+        });
+
+        // Compteur de visites
+        function updateVisitCounter() {
+            // Utilisation du localStorage pour simuler un compteur
+            let visits = localStorage.getItem('pageVisits');
+            visits = visits ? parseInt(visits) + 1 : 1;
+            localStorage.setItem('pageVisits', visits);
+            document.getElementById('visitCount').textContent = `${visits} visites`;
+        }
+
+        // Initialisation
         document.addEventListener('DOMContentLoaded', function() {
-            const navLinks = document.querySelectorAll('.nav-links a');
+            // Affiche la première section par défaut
+            document.querySelector('#presentation').classList.add('active');
             
-            navLinks.forEach(link => {
-                link.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    navLinks.forEach(l => l.classList.remove('active'));
-                    this.classList.add('active');
-                    
-                    const targetId = this.getAttribute('href');
-                    const targetSection = document.querySelector(targetId);
-                    if (targetSection) {
-                        window.scrollTo({
-                            top: targetSection.offsetTop - 100,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-            
-            // Animation au scroll
-            const sections = document.querySelectorAll('.section');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        const id = entry.target.getAttribute('id');
-                        navLinks.forEach(link => {
-                            link.classList.remove('active');
-                            if (link.getAttribute('href') === `#${id}`) {
-                                link.classList.add('active');
-                            }
-                        });
-                    }
-                });
-            }, { threshold: 0.2 });
-            
-            sections.forEach(section => {
-                observer.observe(section);
-            });
-        });-->
+            // Initialise le compteur
+            updateVisitCounter();
+        });
     </script>
 </body>
 </html>
