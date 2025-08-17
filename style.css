@@ -63,14 +63,6 @@ body {
     box-shadow: 0 2px 6px rgba(0,0,0,0.03);
 }
 
-/* Grilles */
-/*.objectives-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.8rem;
-    margin-top: 1.5rem;
-}*/
-
 .objectives-grid {
     display: flex;
     flex-wrap: nowrap;
@@ -709,7 +701,7 @@ body {
   
 
 /* Projets */
-.project-title {
+/*.project-title {
     font-size: 1.2rem;
     color: var(--color-accent);
     font-weight: 700;
@@ -718,12 +710,53 @@ body {
     align-items: center;
     gap: 0.8rem;
     font-family: var(--font-heading);
+}*/
+
+/*.project-title {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}*/
+
+.project-title {
+    font-size: 1.3rem;
+    color: var(--color-accent);
+    font-weight: 700;
+    margin: 0 0 1rem 0;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.8rem;
 }
 
-.project-title a {
+/*.project-title a {
     color: var(--color-secondary);
     font-size: 0.85rem;
+}*/
+
+.project-title a {
+    color: inherit;        /* garde la couleur du parent */
+    text-decoration: none; /* enlève le soulignement */
+    font: inherit;         /* garde la police du parent */
 }
+.project-title a:hover {
+    text-decoration: underline; /* optionnel : effet hover discret */
+}
+
+
+/*.project-status {
+    display: inline-block;
+    padding: 0.3rem 0.8rem;
+    border-radius: 30px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    margin-left: 0.8rem;
+}*/
 
 .project-status {
     display: inline-block;
@@ -731,8 +764,9 @@ body {
     border-radius: 30px;
     font-size: 0.85rem;
     font-weight: bold;
-    margin-left: 0.8rem;
+    margin-left: auto; /* Déplace le statut à droite */
 }
+
 .project-steps {
     display: flex;
     flex-direction: column;
@@ -748,7 +782,7 @@ body {
     color: var(--color-accent);
     font-weight: bold;
   }
-  
+
 .status-completed {
     background-color: #d4edda;
     color: #155724;
@@ -769,6 +803,15 @@ body {
     gap: 0.4rem; /* espacé réduit pour mobile */
     margin: 0.8rem 0;
   }
+
+  .project-card {
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 15px 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+  }
+  
 
  /* Contact - citation stylée */
 .refined-quote {
