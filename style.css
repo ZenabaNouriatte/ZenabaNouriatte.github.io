@@ -698,31 +698,6 @@ body {
     text-align: center;
   }
   
-  
-
-/* Projets */
-/*.project-title {
-    font-size: 1.2rem;
-    color: var(--color-accent);
-    font-weight: 700;
-    margin: 1.2rem 0 0.8rem;
-    display: flex;
-    align-items: center;
-    gap: 0.8rem;
-    font-family: var(--font-heading);
-}*/
-
-/*.project-title {
-    font-size: 1.3rem;
-    color: var(--color-accent);
-    font-weight: 700;
-    margin: 0 0 1rem 0;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-}*/
-
 .project-title {
     font-size: 1.3rem;
     color: var(--color-accent);
@@ -734,10 +709,6 @@ body {
     gap: 0.8rem;
 }
 
-/*.project-title a {
-    color: var(--color-secondary);
-    font-size: 0.85rem;
-}*/
 
 .project-title a {
     color: inherit;        /* garde la couleur du parent */
@@ -794,6 +765,94 @@ body {
     gap: 0.4rem; /* espacé réduit pour mobile */
     margin: 0.8rem 0;
   }
+
+  .status {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+    border-radius: 8px;
+    background: #eee;
+}
+.status.valid {
+    background: #d4f6dd;
+    color: #2d7a38;
+    font-weight:600;
+}
+.status.progress {
+    background: #ffe8b3;
+    color: #8a5b00;
+    font-weight:600;
+}
+/* ===== PRÉSENTATION SOBRE ===== */
+
+.presentation-block {
+    margin-bottom: 2rem;
+}
+
+.presentation-text {
+    line-height: 1.8;
+}
+
+.presentation-text p {
+    margin-bottom: 1.2rem;
+}
+
+.presentation-text strong {
+    color: var(--color-accent);
+    font-weight: 600;
+}
+
+.recent-news {
+    margin: 2rem 0 1.5rem 0;
+}
+
+.recent-news h4 {
+    font-size: 1rem;
+    color: var(--color-secondary);
+    margin-bottom: 1rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.achievements-line {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem;
+    padding: 1.2rem 0;
+    border-top: 1px solid var(--color-card-border);
+    border-bottom: 1px solid var(--color-card-border);
+}
+
+.achievement-item {
+    min-width: 0;
+}
+
+.achievement-item strong {
+    display: block;
+    font-size: 0.95rem;
+    margin-bottom: 0.3rem;
+    color: var(--color-accent);
+}
+
+.achievement-item span {
+    font-size: 0.85rem;
+    color: var(--color-secondary);
+    line-height: 1.4;
+}
+
+.aws-captain-note {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--color-card-border);
+    color: var(--color-text);
+    line-height: 1.7;
+}
+
+.aws-captain-note strong {
+    color: var(--color-accent);
+}
+
+
 
   /* ============================================ */
   /* SECTION PORTFOLIO AVEC ACCORDÉON           */
@@ -2119,3 +2178,8 @@ footer {
         height: 220px;
     }
 }
+
+/* Badges - neutral link style */
+.badge-link { color: inherit; text-decoration: none; font-weight: 600; margin-left: 0.5rem; font-size: 0.92rem; display: inline-block; }
+.badge-link i { margin-left: 0.35rem; font-size: 0.9rem; }
+.badge-link:hover { text-decoration: underline; color: var(--color-accent); }
